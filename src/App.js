@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import AddAnArticle from "./components/AddAnArticle/AddAnArticle";
+import AllArticle from "./components/AllArticle/AllArticle";
 import Category from "./components/Category/Category";
 import Login from "./components/Login/Login";
 import Navbar from './components/Navbar/Navbar';
@@ -20,12 +21,13 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Navbar />
+        <Navbar />
           <Slider />
           <Category />
+          <AllArticle />
           <AddAnArticle />
         </Route>
-        <Route exact path="/login">
+        <Route path="/login">
           <Login />
         </Route>
       </Switch>
