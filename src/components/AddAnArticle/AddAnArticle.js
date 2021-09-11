@@ -16,7 +16,7 @@ const AddAnArticle = () => {
             time: new Date().toLocaleTimeString(),
             date: new Date().toLocaleDateString()
         };
-        const url = 'http://localhost:5055/addAnArticle'
+        const url = 'https://powerful-plateau-71179.herokuapp.com/addAnArticle'
 
         console.log(articleData)
         fetch(url, {

@@ -6,7 +6,7 @@ const Category = () => {
     // const [articles, setArticles] = useState([])
 
     // useEffect(() => {
-    //     fetch('http://localhost:5055/articles')
+    //     fetch('https://powerful-plateau-71179.herokuapp.com/articles')
     //         .then(res => res.json())
     //         .then(data => setArticles(data))
     // }, [])

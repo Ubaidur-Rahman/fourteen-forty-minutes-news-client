@@ -8,7 +8,7 @@ const ArticleDetails = () => {
     const { id } = useParams()
     const [articleDetails, setArticleDetails] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5055/articleDetails/${id}`)
+        fetch(`https://powerful-plateau-71179.herokuapp.com/articleDetails/${id}`)
             .then(res => res.json())
             .then(data => setArticleDetails(data))
     }, [])

@@ -11,7 +11,7 @@ const MakeAnAdmin = () => {
             password: data.password
 
         };
-        const url = 'http://localhost:5055/makeAnAdmin'
+        const url = 'https://powerful-plateau-71179.herokuapp.com/makeAnAdmin'
 
         console.log(adminData)
         fetch(url, {

@@ -6,7 +6,7 @@ const CategoryArticle = () => {
 // const [categorize, setCategorize] = useState([])
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5055/articles/${category}`)
+    //     fetch(`https://powerful-plateau-71179.herokuapp.com/articles/${category}`)
     //         .then(res => res.json())
     //         .then(data => setCategorize(data))
     // }, [])
