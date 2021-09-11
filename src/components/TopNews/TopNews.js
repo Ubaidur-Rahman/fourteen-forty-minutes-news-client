@@ -13,14 +13,10 @@ const TopNews = () => {
     }, [])
 
 
+    articles.length =3
+    console.log(articles)
 
-    const [article, setArticle] = useState([])
-    useEffect(() => {
-        fetch(`http://localhost:5055/article?category=${'top'}`)
-            .then(res => res.json())
-            .then(data => setArticle(data))
-    }, [])
-    console.log(article)
+    
 
 
 
@@ -28,22 +24,25 @@ const TopNews = () => {
 
     return (
         <div className='row'>
-            <h4 className="text-center">Top News</h4>
-            <div className="col-md-4 category-body-bg">
-                <div className="card g-5">
+            <h4 className="text-center m-3 top-news">Trending News</h4>
+            <div className="row">
+            {
+                articles.map(article => <div className="col-md-4 text-center category-body-bg">
+                <div className="card">
                     <div className="category-top">
                         <div className='post-info-category'>
-                            <a href="https://discussion.qodeinteractive.com/category/sport/" rel="category tag">{articles[1]?.category}</a>
+                            {article.category}
                         </div>
-                        <img src={articles[1]?.imageURL} className='w-100' alt="a" />
-                    </div>
+                        <img src={article.imageURL} className='w-100' alt="a" />
+                    
 
-                    <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <small className="text-muted">Added in {articles[3]?.time}</small>
+                    
+                        <h5 className="card-title">{article.title}</h5>
                     </div>
                 </div>
 
+            </div>)
+            }
             </div>
 
 

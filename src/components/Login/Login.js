@@ -5,6 +5,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React, { useContext } from 'react';
 import { useHistory, useLocation } from "react-router";
 import { UserContext } from "../../App";
+import logo from '../../images/Screenshot 2021-09-06 160848.png';
 import firebaseConfig from './firebase.config';
 
 
@@ -46,11 +47,13 @@ const Login = () => {
         //     });
     }
     return (
-        <div className="sign-in-style">
-            <img src="" style={{ height: '80px' }} className="img-fluid mb-5" alt="logo" />
+        <div className="sign-in vh-100">
+            <div className="sign-in-style">
+            <img src={logo} style={{ height: '80px' }} className="img-fluid rounded mb-5" alt="logo" />
             <br />
             <h4>Sign In</h4>
             <button onClick={handleSignIn} className="btn custom-btn-bg"> Sign in with Google</button>
+        </div>
         </div>
     );
 };

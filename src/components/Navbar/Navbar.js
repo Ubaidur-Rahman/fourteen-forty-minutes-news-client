@@ -17,7 +17,10 @@ const Navbar = () => {
                 <Link className="nav-link custom-nav-style ms-3 active" to="/home">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link custom-nav-style ms-3 active" to="/video">Video</Link>
+                <Link className="nav-link custom-nav-style ms-3 active" to="/dashboard">Dashboard</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link custom-nav-style ms-3 active" to="/video">Videos</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link custom-nav-style ms-3 active" to="/pools">Pools</Link>

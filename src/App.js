@@ -6,10 +6,13 @@ import {
 } from "react-router-dom";
 import './App.css';
 import AddAnArticle from "./components/AddAnArticle/AddAnArticle";
-import AllArticle from "./components/AllArticle/AllArticle";
+import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
 import Category from "./components/Category/Category";
+import CategoryArticle from "./components/CategoryArticle/CategoryArticle";
 import Login from "./components/Login/Login";
 import Navbar from './components/Navbar/Navbar';
+import NoMatch from "./components/NoMatch/NoMatch";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Slider from "./components/Slider/Slider";
 
 export const UserContext = createContext();
@@ -18,20 +21,36 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({})
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-    <Router>
-      <Switch>
-        <Route exact path="/">
-        <Navbar />
-          <Slider />
-          <Category />
-          <AllArticle />
-          <AddAnArticle />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Navbar />
+            <Slider />
+            <Category />
+          </Route>
+          <Route path="/home">
+            <Navbar />
+            <Slider />
+            <Category />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/articleDetails/:id">
+            <ArticleDetails />
+          </Route>
+          <Route path="/articles/:category">
+            <CategoryArticle />
+          </Route>
+          <PrivateRoute path="/dashboard">
+          <Navbar />
+            <AddAnArticle />
+          </PrivateRoute>
+          <Route path="/*">
+            <NoMatch />
+          </Route>
+        </Switch>
+      </Router>
     </UserContext.Provider>
   );
 }

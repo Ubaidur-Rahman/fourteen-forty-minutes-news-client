@@ -1,5 +1,4 @@
 import React from 'react';
-import newslogo1 from '../../images/Screenshot 2021-09-06 160848.png';
 import TopNews from '../TopNews/TopNews';
 
 const Slider = () => {
@@ -7,7 +6,7 @@ const Slider = () => {
         <div className='row container-fluid'>
             <div className='col-md-7'>
             <h4 className="text-center">Slider</h4>
-                <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+                {/* <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -44,7 +43,7 @@ const Slider = () => {
                         <span className="carousel-control-next-icon" aria-hidden="true"></span>
                         <span className="visually-hidden">Next</span>
                     </button>
-                </div>
+                </div> */}
             </div>
             <div className='col-md-5'>
                 <TopNews />

@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams, useRouteMatch } from 'react-router';
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import AllArticle from '../AllArticle/AllArticle';
 import Magazine from '../Magazine/Magazine';
 
 const Category = () => {
@@ -13,23 +15,32 @@ const Category = () => {
             .then(data => setArticles(data))
     }, [])
 
-    let { path, url } = useRouteMatch();
-    console.log(path, url);
-    let { topicId } = useParams();
-    console.log(topicId);
+    let history = useHistory();
 
+    const categorize = (category) => {
+        history.push(`/articles/${category}`);
+   }
+   console.log(articles)
 
     return (
         <div className='row'>
             <div className="col-md-2 bg-light text-center rounded-3 shadow-lg">
                 <h3>Category</h3>
-                <button className="all">All</button>
+                <div className="">
+                    <button className="btn btn-primary">All</button>
+                    {articles.map(art =><Link onClick={()=> categorize(art.category)} className="btn btn-primary">{art.category}</Link>)}
+                </div>
             </div>
-        
-           
-            <Magazine />
+            <div className="col-md-8">
+                <AllArticle />
+
             </div>
-            
+            <div className="col-md-2">
+                <Magazine />
+            </div>
+
+        </div>
+
     );
 };
 
