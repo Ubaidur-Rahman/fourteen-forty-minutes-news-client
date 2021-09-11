@@ -17,13 +17,13 @@
   align-items: center;
 }
 .sign-in-style{
-  height: 300px;
-  width: 300px;
+
   padding: 20px;
+  display: flex;
  text-align: center;
  justify-items: center;
  border: 2px solid #000000;
- border-radius: 10px 20px;
+ border-radius: 10px ;
 }
 .custom-btn-bg{
   background-color: #4696c5;

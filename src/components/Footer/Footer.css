@@ -1,0 +1,83 @@
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  position: relative;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #000000;
+  line-height: 28px;
+}
+
+.footer-widget-heading h3 {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.footer-widget ul li a {
+  color: #435ca0;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #000000;
+  border: 1px solid #2E2E2E;
+  color: rgb(255, 255, 255);
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #1e1f50;
+    padding: 13px 20px;
+    top: 0;
+}
+.subscribe-form button .subscribe-btn {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #2E2E2E;
+}
+.copyright-text p a{
+  color: #2E2E2E;
+}

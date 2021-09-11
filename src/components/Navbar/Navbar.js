@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import logo from '../../images/1440.png';
 
 const Navbar = () => {
+  const [loggedInUser] = useContext(UserContext);
+  
+  const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:5055/isAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsAdmin(data));
+    }, [isAdmin])
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,9 +31,9 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link custom-nav-style ms-3 active" to="/home">Home</Link>
               </li>
-              <li className="nav-item">
+              {isAdmin && <li className="nav-item">
                 <Link className="nav-link custom-nav-style ms-3 active" to="/dashboard">Dashboard</Link>
-              </li>
+              </li>}
               <li className="nav-item">
                 <Link className="nav-link custom-nav-style ms-3 active" to="/video">Videos</Link>
               </li>
@@ -31,8 +46,17 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link custom-nav-style ms-3 active" to="/contact">Contact Us</Link>
               </li>
+              
+          <li className="nav-item">
+              {
+                loggedInUser.name ? <p>{loggedInUser.name}</p>  : <button className="btn custom-btn-bg w-100">
+                  <Link className='custom-nav-style' to="/login">Login</Link>
+                </button>
+              }
+              </li>
             </ul>
           </div>
+          
         </div>
       </nav></div>
   );

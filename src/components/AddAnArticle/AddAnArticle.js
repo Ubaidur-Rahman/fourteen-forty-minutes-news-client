@@ -26,8 +26,8 @@ const AddAnArticle = () => {
             body: JSON.stringify(articleData)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
-alert('data added')
+            .then(data =>alert(data ,'added') )
+
 
     };
 
@@ -49,9 +49,10 @@ alert('data added')
     }
 
     return (
-        <div className='row'>
             <div className="col-md-6">
-                <form style={{ marginTop: "130px" }} onSubmit={handleSubmit(onSubmit)}>
+            <div className="d-flex justify-content-center align-items-center">
+                <form className="border border-primary border-2 rounded" style={{ marginTop: "30px"}} onSubmit={handleSubmit(onSubmit)}>
+                <h2 className="text-center">Add an Article</h2>
                     <div className="d-flex justify-content-around p-3">
                         <div>
 
@@ -73,8 +74,8 @@ alert('data added')
                             <label><h5>Add Photo</h5></label> <br />
                             <input className="form-control" name="exampleRequired" type="file" onChange={handleImageUpload} id="formFile" />
                             <br />
-                            <div className="container text-end">
-                                <input className="btn btn-primary" type="submit" value="Submit" />
+                            <div className="container text-center">
+                                <input className="btn custom-btn-bg mt-4 w-100" type="submit" value="Submit" />
                             </div>
 
                         </div>
@@ -82,7 +83,7 @@ alert('data added')
 
                 </form>
             </div>
-        </div>
+            </div>
     );
 };
 

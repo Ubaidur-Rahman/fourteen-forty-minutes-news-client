@@ -28,7 +28,7 @@ const AllArticle = () => {
                         </p>
                             <img style={{ height:"80%" }} src={article.imageURL} className='w-50 m-auto ' alt="a" />
                         
-                        <div className="title"><h5 className="card-title">"{article.title}"</h5></div>
+                        <div className="title"><h5 className="card-title">"{article.title.slice(0,50)}..."</h5></div>
                         <p className="text-muted">{article.description.slice(0,100)}...</p>
                         <button className="btn btn-primary w-100" onClick={()=> readArticle(article._id)} >Read More</button>
                     </div>

@@ -15,7 +15,6 @@ const [categorize, setCategorize] = useState([])
 
     return (
         <div>
-        catahsjahsjahjshah
         </div>
     );
 };
