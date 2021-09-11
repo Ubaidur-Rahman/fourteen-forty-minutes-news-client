@@ -13,7 +13,8 @@ const AddAnArticle = () => {
             description: data.description,
             category: data.category,
             imageURL: imageURL,
-            time: new Date().toISOString().slice(11, -5)
+            time: new Date().toLocaleTimeString(),
+            date: new Date().toLocaleDateString()
         };
         const url = 'http://localhost:5055/addAnArticle'
 

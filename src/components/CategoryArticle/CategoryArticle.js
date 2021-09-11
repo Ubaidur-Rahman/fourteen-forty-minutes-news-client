@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import React from 'react';
 
 const CategoryArticle = () => {
-    const { category } = useParams()
-    console.log(category)
-const [categorize, setCategorize] = useState([])
+    // const { category } = useParams()
+//     console.log(category)
+// const [categorize, setCategorize] = useState([])
 
-    useEffect(() => {
-        fetch(`http://localhost:5055/articles/${category}`)
-            .then(res => res.json())
-            .then(data => setCategorize(data))
-    }, [])
-    console.log(categorize)
+    // useEffect(() => {
+    //     fetch(`http://localhost:5055/articles/${category}`)
+    //         .then(res => res.json())
+    //         .then(data => setCategorize(data))
+    // }, [])
+    // console.log(categorize)
 
     return (
         <div>

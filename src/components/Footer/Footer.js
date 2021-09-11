@@ -1,6 +1,7 @@
 import { faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import footerLogo from '../../images/1440.png';
 import './Footer.css';
 
@@ -14,7 +15,7 @@ const Footer = () => {
                     <div className="col-xl-4 col-lg-4 mb-50">
                         <div className="footer-widget">
                             <div className="footer-logo">
-                                <a href="#"><img src={footerLogo} className="img-fluid" alt="logo" /></a>
+                                <Link to="/"><img src={footerLogo} className="img-fluid" alt="logo" /></Link>
                             </div>
                             <div className="footer-text">
                                 <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing

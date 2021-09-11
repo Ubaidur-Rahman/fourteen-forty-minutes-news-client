@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../App';
+import React, { useEffect, useState } from 'react';
 import TopNews from '../TopNews/TopNews';
 
 const Slider = () => {
 
     const [articles, setArticles] = useState([])
-    const [loggedInUser] = useContext(UserContext)
 
     useEffect(() => {
         fetch('http://localhost:5055/articles')
@@ -30,27 +28,27 @@ const Slider = () => {
                             <div>
                                 <img src={articles[articles.length - 1]?.imageURL} className="d-block w-100" alt="..." />
                                 <div className="carousel-caption d-md-block">
-                                    <h3 className='text-secondary'>{articles[articles.length - 1]?.title}</h3>
+                                    <h3 className='text-white bg-primary rounded'>{articles[articles.length - 1]?.title}</h3>
                                 </div>
                             </div>
-
-                            <div className="carousel-item">
-                                <div>
-                                    <img src={articles[articles.length -2]?.imageURL} className="d-block w-100" alt="..." />
-                                    <div className="carousel-caption d-md-block">
-                                        <h3 className='text-secondary'>{articles[articles.length - 2]?.title}</h3>
-                                    </div>
-                                </div>
-                            </div>
+</div>
                             <div className="carousel-item">
                                 <div>
                                     <img src={articles[articles.length - 3]?.imageURL} className="d-block w-100" alt="..." />
                                     <div className="carousel-caption d-md-block">
-                                        <h3 className='text-secondary'>{articles[articles.length - 3]?.title}</h3>
+                                        <h3 className='text-white bg-primary rounded'>{articles[articles.length - 3]?.title}</h3>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div className="carousel-item">
+                                <div>
+                                    <img src={articles[articles.length - 4]?.imageURL} className="d-block w-100" alt="..." />
+                                    <div className="carousel-caption d-md-block">
+                                        <h3 className='text-white bg-primary rounded'>{articles[articles.length - 4]?.title}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>

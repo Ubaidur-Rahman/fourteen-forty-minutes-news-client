@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import { UserContext } from '../../App';
 
 const AllArticle = () => {
 
     const [articles, setArticles] = useState([])
-    const [loggedInUser] = useContext(UserContext)
 
     useEffect(() => {
         fetch('http://localhost:5055/articles')

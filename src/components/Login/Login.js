@@ -12,7 +12,7 @@ import firebaseConfig from './firebase.config';
 
 const Login = () => {
 
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [, setLoggedInUser] = useContext(UserContext)
     const [newUser, setNewUser] = useState(false);
 
     const [user, setUser] = useState({
@@ -148,7 +148,7 @@ const Login = () => {
                                         <label className="custom-control-label" > Remember Me</label>
                                     </div>
                                     <div>
-                                        <a href="" >Forgot password</a>
+                                        <Link to="/login" >Forgot password</Link>
                                     </div>
                                 </div>
                                 <p className="text-danger text-center">{user.error}</p>

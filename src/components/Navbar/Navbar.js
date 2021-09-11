@@ -16,7 +16,7 @@ const Navbar = () => {
         })
             .then(res => res.json())
             .then(data => setIsAdmin(data));
-    }, [isAdmin])
+    }, [])
 
   return (
     <div>
@@ -49,7 +49,7 @@ const Navbar = () => {
               
           <li className="nav-item">
               {
-                loggedInUser.name ? <p>{loggedInUser.name}</p>  : <button className="btn custom-btn-bg w-100">
+                loggedInUser.name ? <img style={{ height: '50px', borderRadius: "50%" }} src={loggedInUser.photoURL} alt={loggedInUser.name} />  : <button className="btn custom-btn-bg w-100">
                   <Link className='custom-nav-style' to="/login">Login</Link>
                 </button>
               }
